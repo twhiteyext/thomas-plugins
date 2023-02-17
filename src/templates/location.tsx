@@ -37,7 +37,6 @@ export const config: TemplateConfig = {
     // Specifies the exact data that each generated document will contain. This data is passed in
     // directly as props to the default exported function.
     fields: [
-      ENV_VAR_KEY,
       "uid",
       "meta",
       "name",
@@ -72,7 +71,7 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
     ? document.slug
     : `${document.locale}/${document.address.region}/${document.address.city}/${
         document.address.line1
-      }-${document.id.toString()}-${ENV_VAR_KEY}`;
+      }-${document.id.toString()}`;
 };
 
 /**
